@@ -10,48 +10,19 @@ Enable traceability across systems for manufacturing analytics.
 Support modular extension for future data sources.
 
 Architecture:
-|   APRM Source  | -->                 | --> |                |
-                       |   Extraction   | --> | Transformation | --> |     Load       |
-|   DCS Source   | --> |                | --> |                | --> | Unified Table  |
+| APRM Source | --> | Extraction     | --> | Transformation | --> | Load         |
+| DCS Source  | --> |                | --> |                | --> | Unified Table |
 
 
 Data Sources
 
-APRM (Aspen Plus Record Manager): Equipment and recipe data
-DCS (Distributed Control System): Real-time process data
-Optional: MES, LIMS, DeltaV backend tables
+Historian: APRM – Equipment and recipe data (e.g., setpoints, control parameters, batch configurations)
+DCS: Real-time process data – Temperature, pressure, flow rates, sensor readings
 
 Technologies Used
 
 Python: Core ETL logic
 SQL: Data extraction and transformation
 Pandas: Data manipulation
-Airflow / Prefect (optional): Workflow orchestration
-Logging: Custom error tracking and audit trail
 
-Folder Structure
-etl-master-data-pipeline/
-│
-├── data_sources/
-│   ├── aprm/
-│   ├── dcs/
-│   └── ...
-│
-├── transformations/
-│   ├── mapping_rules.py
-│   ├── validators.py
-│   └── unify_schema.py
-│
-├── loaders/
-│   ├── to_sql.py
-│   └── to_csv.py
-│
-├── config/
-│   ├── db_config.yaml
-│   └── source_mappings.json
-│
-├── tests/
-│   └── test_pipeline.py
-│
 
-└── README.md
