@@ -12,10 +12,11 @@ This project implements Data Pipeline 1, an ETL (Extract, Transform, Load) workf
 - Support modular extension for future data sources.
 
 ### Architecture
+```
 | APRM Source  | --> |                | --> |                | --> |                              |
 | DCS Source   | --> | Extraction     | --> | Transformation | --> | Unified Table (Master Table) |
 | MFGData      | --> |                | --> |                | --> |                              |
-
+```
 ### Data Sources
 - **Historian**: APRM – Equipment and recipe data (e.g., setpoints, control parameters, batch configurations)  
 - **DCS**: Real-time process data – Temperature, pressure, flow rates, sensor readings  
@@ -28,3 +29,4 @@ This project implements Data Pipeline 1, an ETL (Extract, Transform, Load) workf
 - **Python**: Core ETL logic  
 - **SQL**: Data extraction and transformation  
 - **Pandas**: Data manipulation
+
