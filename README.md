@@ -10,8 +10,9 @@ Enable traceability across systems for manufacturing analytics.
 Support modular extension for future data sources.
 
 Architecture:
-| APRM Source | --> | Extraction     | --> | Transformation | --> | Load         |
-| DCS Source  | --> |                | --> |                | --> | Unified Table |
+| APRM Source  | --> |                | --> |                | --> |                              |
+| DCS Source   | --> | Extraction     | --> | Transformation | --> | Unified Table (Master Table) |
+| MFGData      | --> |                | --> |                | --> |                              |
 
 
 Data Sources
@@ -24,5 +25,6 @@ Technologies Used
 Python: Core ETL logic
 SQL: Data extraction and transformation
 Pandas: Data manipulation
+
 
 
